@@ -1,0 +1,332 @@
+/* ==========================================================================
+   Apex Technical Media Solutions - Master Stylesheet
+   Designed for Second Deliverable (PLO)
+   ========================================================================== */
+
+/* --- Universal Reset & Box Sizing --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Global Body Styling --- */
+body {
+    background-color: #0f172a;
+    color: #334155;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px 0;
+}
+
+/* --- Outer Layout Wrapper --- */
+#wrapper {
+    width: 92%;
+    max-width: 1140px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   Header Banners with Background Images & Layered Text
+   ========================================================================== */
+header {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Banner 1: Home Page Hero */
+header.home-banner {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('../images/hero-banner.jpg');
+    background-color: #1e293b;
+}
+
+/* Banner 2: Services Page Hero */
+header.services-banner {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('../images/services-banner.jpg');
+    background-color: #0f766e;
+}
+
+/* Layered Content Container */
+.banner-overlay {
+    text-align: center;
+    color: #f8fafc;
+    padding: 20px;
+    width: 100%;
+}
+
+.banner-overlay h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.banner-overlay .tagline {
+    font-size: 1.15rem;
+    color: #38bdf8;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.banner-overlay .author-credit {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   Global Navigation Bar
+   ========================================================================== */
+nav {
+    background-color: #1e293b;
+    border-bottom: 3px solid #0284c7;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li a {
+    display: block;
+    padding: 14px 22px;
+    color: #f1f5f9;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+nav li a:hover,
+nav li a.active {
+    background-color: #0284c7;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Main Content Layout (Flexbox Architecture)
+   ========================================================================== */
+main {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.intro-section {
+    flex: 1 1 100%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.intro-section h2 {
+    color: #0f172a;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+/* Primary Article Content */
+article.feature-card,
+article.service-details {
+    flex: 2 1 540px;
+}
+
+article h3,
+.pricing-container h3,
+aside h3 {
+    color: #0369a1;
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+/* Description Lists in Services */
+dl dt {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-top: 15px;
+}
+
+dl dd {
+    margin-left: 0;
+    margin-top: 4px;
+    color: #475569;
+}
+
+/* Sidebar Callout (<aside>) */
+aside.sidebar-callout {
+    flex: 1 1 280px;
+    background-color: #f8fafc;
+    border-left: 4px solid #0284c7;
+    padding: 20px;
+    border-radius: 4px;
+    align-self: flex-start;
+}
+
+aside ul {
+    list-style-position: inside;
+    margin-bottom: 15px;
+    color: #475569;
+}
+
+aside blockquote {
+    font-style: italic;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   Image Styling, Opacity, Borders & Hover Micro-Interactions
+   ========================================================================== */
+figure.media-preview {
+    margin-top: 20px;
+}
+
+.responsive-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    opacity: 0.92;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.responsive-img:hover {
+    opacity: 1;
+    transform: scale(1.02);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Rubric Requirement: Border-Free Responsive Pricing Schedule Table
+   ========================================================================== */
+.pricing-container {
+    flex: 1 1 100%;
+    margin-top: 10px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+/* Custom table styling: removed borders and added alternating nth-child row shading for clean readability without grid lines */
+table.border-free-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    text-align: left;
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+
+table.border-free-table caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: bold;
+    color: #475569;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+table.border-free-table th,
+table.border-free-table td {
+    border: none;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+}
+
+table.border-free-table th {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+table.border-free-table tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+table.border-free-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+table.border-free-table tbody tr:hover {
+    background-color: #e0f2fe;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 24px 15px;
+    font-size: 0.9rem;
+    border-top: 1px solid #1e293b;
+}
+
+footer a {
+    color: #38bdf8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #bae6fd;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsive Media Queries (Mobile & Tablet Adjustments)
+   ========================================================================== */
+/* Responsive mobile layout: media query changes flex direction to column on screens under 768px so navigation links and content cards stack cleanly */
+@media screen and (max-width: 768px) {
+    .banner-overlay h1 {
+        font-size: 1.7rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li a {
+        text-align: center;
+        padding: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    main {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    article.feature-card,
+    article.service-details,
+    aside.sidebar-callout {
+        flex: 1 1 100%;
+    }
+}

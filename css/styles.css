@@ -233,6 +233,7 @@ figcaption {
     width: 100%;
     overflow-x: auto;
 }
+
 /* Custom table styling: removed borders and added alternating nth-child row shading for clean readability without grid lines */
 table.border-free-table {
     width: 100%;
@@ -303,7 +304,7 @@ footer a:hover {
 /* ==========================================================================
    Responsive Media Queries (Mobile & Tablet Adjustments)
    ========================================================================== */
-/* Responsive mobile layout: media query changes flex direction to column on screens under 768px so navigation links and content cards stack cleanly */
+/* Responsive mobile layout: media query changes flex direction to column on screens under 768px so navigation links, content cards, and pricing table rows stack cleanly */
 @media screen and (max-width: 768px) {
     .banner-overlay h1 {
         font-size: 1.7rem;
@@ -328,5 +329,44 @@ footer a:hover {
     article.service-details,
     aside.sidebar-callout {
         flex: 1 1 100%;
+    }
+
+    /* Responsive Flexbox Pricing Table: stacks table container and table elements into column layout */
+    .table-responsive {
+        display: flex;
+        flex-direction: column;
+        overflow-x: visible;
+    }
+
+    table.border-free-table,
+    table.border-free-table caption,
+    table.border-free-table tbody,
+    table.border-free-table tr,
+    table.border-free-table td {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    table.border-free-table thead {
+        display: none;
+    }
+
+    table.border-free-table tbody {
+        gap: 12px;
+    }
+
+    table.border-free-table tr {
+        padding: 12px 14px;
+        border-radius: 6px;
+        background-color: #f8fafc;
+    }
+
+    table.border-free-table tbody tr:nth-child(even) {
+        background-color: #f1f5f9;
+    }
+
+    table.border-free-table td {
+        padding: 4px 0;
     }
 }
